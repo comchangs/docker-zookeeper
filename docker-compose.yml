@@ -5,12 +5,14 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: parrotstream/zookeeper:latest
+    image: comchangs/zookeeper:latest
     ports:
       - 2181:2181
       - 2888:2888
       - 3888:3888
 networks:
-  parrot:
-    name: parrot_default
+  default:
+    external:
+      name: comchangs
+  comchangs:
     driver: bridge
